@@ -12,6 +12,7 @@ Simulation and analysis of Rydberg atom interactions across control parameters (
 - Identification of a **controlled breakdown** of 1D scaling at low T  
 - Recovery via a **low-dimensional (2D) model** with near-perfect predictive accuracy  
 - Extraction of a **curved phase boundary** not captured by linear effective-noise models  
+- Evidence for a **constrained universality via power-law scaling collapse**
 
 ---
 
@@ -59,6 +60,18 @@ A simple 2D model restores accuracy:
 
 - predicted vs true values align nearly perfectly  
 - confirms system is **low-dimensional but not strictly 1D**  
+
+---
+
+## True Universality Test
+
+![True universality collapse](figures/true_universality_test.png)
+
+We test whether the system admits a **true 1D universal description**.
+
+- Power-law rescaling produces near-perfect collapse  
+- Alternative forms (e.g., additive corrections) fail  
+- Indicates **universality exists but is constrained in form**
 
 ---
 
