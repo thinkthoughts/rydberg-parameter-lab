@@ -8,11 +8,13 @@ Simulation and analysis of Rydberg atom interactions across control parameters (
 
 ## Key Results
 
-- Emergence of an **effective noise coordinate**: γ_eff = γ + λ·γ_φ  
+- Emergence of an **effective noise coordinate**:
+  γ_eff = γ + λ·γ_φ  
 - Identification of a **controlled breakdown** of 1D scaling at low T  
 - Recovery via a **low-dimensional (2D) model** with near-perfect predictive accuracy  
-- Extraction of a **curved phase boundary** not captured by linear effective-noise models  
-- Evidence for a **constrained universality via power-law scaling collapse**
+- Extraction of a **curved phase boundary** not captured by linear models  
+- Evidence for a **constrained universality via power-law scaling collapse**  
+- Discovery of an **emergent scale-dependent decay rate**, replacing simple factorized noise models  
 
 ---
 
@@ -25,6 +27,11 @@ A central observation:
 > System behavior approximately reduces from a 2D noise space  
 > to a 1D effective coordinate, but this reduction fails in a  
 > predictable regime and can be systematically repaired.
+
+At a deeper level:
+
+> The system admits a universal description, but not via a fixed decay rate —
+> instead through an emergent, scale-dependent effective dynamics.
 
 ---
 
@@ -59,19 +66,41 @@ At low T:
 A simple 2D model restores accuracy:
 
 - predicted vs true values align nearly perfectly  
-- confirms system is **low-dimensional but not strictly 1D**  
+- confirms system is **low-dimensional but not strictly 1D**
 
 ---
 
-## True Universality Test
+## True Universality (Constrained)
 
 ![True universality collapse](figures/true_universality_test.png)
 
 We test whether the system admits a **true 1D universal description**.
 
 - Power-law rescaling produces near-perfect collapse  
-- Alternative forms (e.g., additive corrections) fail  
-- Indicates **universality exists but is constrained in form**
+- Alternative forms fail  
+- Universality exists, but only in a **restricted functional form**
+
+---
+
+## Emergent Rate Model (New Result)
+
+The universal response is not governed by a constant decay rate.
+
+Instead:
+
+dS/dx = −Γ_eff(x) · S
+
+where Γ_eff(x) is **scale-dependent**.
+
+This leads naturally to a stretched form:
+
+S(x) ≈ exp(−a x^b)
+
+Key implications:
+
+- decay is not factorizable into independent channels  
+- effective dynamics evolve across scale  
+- stretched behavior emerges from **coupled open-system processes**
 
 ---
 
@@ -82,7 +111,7 @@ We test whether the system admits a **true 1D universal description**.
 - White: effective-noise prediction  
 - Red: true phase boundary  
 
-The boundary curvature reveals structure not captured by 1D reductions.
+The curvature reveals structure beyond simple reductions.
 
 ---
 
@@ -98,7 +127,7 @@ H = Σ_i [(Ω/2) σ_x^(i) − Δ n_i] + V n₁ n₂
 
 ### Open-System Dynamics (Lindblad)
 
-dρ/dt = −i[H, ρ] + Σ_k (L_k ρ L_k† − 1/2 {{L_k† L_k, ρ}})
+dρ/dt = −i[H, ρ] + Σ_k (L_k ρ L_k† − 1/2 {L_k† L_k, ρ})
 
 Noise channels:
 - spontaneous emission (γ)
@@ -120,11 +149,11 @@ Noise channels:
 ## Repository Structure
 
 rydberg-parameter-lab/
-├── README.md
-├── notebooks/
-├── src/
-├── figures/
-└── environment.yml
+├── README.md  
+├── notebooks/  
+├── src/  
+├── figures/  
+└── environment.yml  
 
 ---
 
@@ -134,8 +163,8 @@ pip install -r requirements.txt
 
 or
 
-conda env create -f environment.yml
-conda activate rydberg-parameter-lab
+conda env create -f environment.yml  
+conda activate rydberg-parameter-lab  
 
 ---
 
@@ -157,6 +186,7 @@ This project focuses on:
 - reducing high-dimensional parameter spaces  
 - understanding **limits of effective models**  
 - constructing **interpretable scaling laws**  
+- connecting open-system dynamics to **emergent universal behavior**
 
 ---
 
