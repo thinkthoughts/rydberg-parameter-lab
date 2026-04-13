@@ -82,27 +82,41 @@ We test whether the system admits a **true 1D universal description**.
 
 ---
 
-## Emergent Rate Model (New Result)
+## Scale-Dependent Effective Rate
 
-The universal response is not governed by a constant decay rate.
+![Emergent rate](figures/emergent_rate.png)
 
-Instead:
+The system is not governed by a constant decay rate.
+
+Instead, the dynamics follow:
 
 dS/dx = −Γ_eff(x) · S
 
-where Γ_eff(x) is **scale-dependent**.
+where Γ_eff(x) is a **scale-dependent effective rate**.
 
-This leads naturally to a stretched form:
+### Observations
 
-S(x) ≈ exp(−a x^b)
+- Γ_eff(x) is clearly **not constant**  
+- Strong variation at small x indicates **nontrivial early-time dynamics**  
+- The flat fitted line corresponds to a **coarse-grained approximation**, not the true behavior  
 
-Key implications:
+### Interpretation
 
-- decay is not factorizable into independent channels  
-- effective dynamics evolve across scale  
-- stretched behavior emerges from **coupled open-system processes**
+- The system does not reduce to a single exponential decay  
+- Instead, decay emerges from **coupled open-system channels**  
+- The observed stretched-exponential universality arises from a  
+  **distribution of effective rates across scales**
 
----
+### Key Insight
+
+> Universality is not driven by a constant rate,  
+> but by a structured, scale-dependent evolution of noise.
+
+This explains:
+
+- why simple exponential models fail  
+- why stretched-exponential fits succeed  
+- why a low-dimensional but nontrivial structure emerges
 
 ## Phase Boundary: Model vs Reality
 
