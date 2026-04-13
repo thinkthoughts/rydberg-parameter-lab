@@ -6,14 +6,76 @@ Parameter-space exploration of driven Rydberg atom systems with open-system dyna
 
 ## Overview
 
-This repository studies light–atom interactions in neutral-atom platforms using Rydberg excitation. The focus is on how system behavior evolves across key physical parameters:
+This repository studies light–atom interactions in neutral-atom platforms using Rydberg excitation, with a focus on **noise-robust phase-locked CZ gates**.
+
+We explore how system behavior organizes across key physical parameters:
 
 - Rabi frequency (Ω)
 - Detuning (Δ)
 - Rydberg interaction strength (V)
-- Dissipation and decoherence rates (γ)
+- Dissipation and decoherence rates (γ, γφ)
+- Control duration (T) and pulse shape parameters
 
-By mapping parameter landscapes, this project connects physical modeling → open-system dynamics → performance metrics relevant to quantum information tasks.
+The project connects:
+**physical modeling → open-system dynamics → reduced scaling laws → quantum gate performance**
+
+---
+
+## 🔹 New Result: Emergent Low-Dimensional Structure
+
+Across Notebooks 22–33, we find that noisy gate performance is governed by an approximate **low-dimensional scaling law**.
+
+### 1. Effective Noise Coordinate
+
+Noise collapses onto a single direction:
+
+    γ_eff = γ + λ · γφ
+
+This reduces a 2D noise space → 1D.
+
+---
+
+### 2. Control Rescaling
+
+Across control variations (T, α, Ω):
+
+    x = γ_eff · (T / T_c)
+
+where:
+- T_c = extracted phase-lock survival boundary
+
+---
+
+### 3. Emergent Scaling Law
+
+For most protocols:
+
+    S ≈ Ŝ(γ_eff · T / T_c)
+
+where:
+- S = phase-lock order parameter (fidelity × coherence × (1 − leakage))
+- Ŝ = shared response curve
+
+---
+
+### 4. Controlled Breakdown
+
+Scaling is not exact.
+
+A structured deviation appears for:
+- short-duration protocols (low T)
+
+This indicates a **missing physical dimension** (e.g. non-adiabatic effects).
+
+---
+
+## 🔹 Interpretation
+
+This is not a trivial collapse.
+
+Instead:
+
+> System dynamics organize onto a **low-dimensional manifold**, with a **boundary where reduction fails**.
 
 ---
 
@@ -21,69 +83,49 @@ By mapping parameter landscapes, this project connects physical modeling → ope
 
 ### Driven Two-Level System
 
-The basic Hamiltonian in the rotating frame:
+H = (Ω/2) σ_x − Δ |r⟩⟨r|
 
-H = (Ω/2) σ_x - Δ |r⟩⟨r|
+### Two-Atom Interaction
 
-where:
-- Ω: Rabi frequency (drive strength)
-- Δ: detuning
-- |r⟩: Rydberg state
+H = Σ_i [(Ω/2) σ_x^(i) − Δ n_i] + V n₁ n₂
 
----
+### Open-System (Lindblad)
 
-### Two-Atom Rydberg Interaction
-
-For two atoms:
-
-H = Σ_i [(Ω/2) σ_x^(i) - Δ n_i] + V n_1 n_2
-
-where:
-- V: Rydberg–Rydberg interaction (blockade strength)
-- n_i = |r⟩⟨r|_i
-
----
-
-### Open-System Dynamics (Lindblad)
-
-Time evolution:
-
-dρ/dt = -i[H, ρ] + Σ_k (L_k ρ L_k† - 1/2 {L_k† L_k, ρ})
-
-Typical channels:
-- spontaneous emission
-- dephasing
+dρ/dt = −i[H,ρ] + Σ_k (L_k ρ L_k† − ½{L_k†L_k,ρ})
 
 ---
 
 ## Core Capabilities
 
-- Single-atom Rabi dynamics
-- Multi-level Rydberg excitation
-- Two-atom blockade modeling
-- Open quantum system simulation (Lindblad)
+- Rydberg dynamics simulation
+- Open-system Lindblad evolution
+- CZ gate modeling and compensation
+- Noise robustness analysis
 - Parameter sweeps and phase diagrams
-- Gate fidelity evaluation
-- Parameter optimization
+- Scaling-law discovery
+- Universality testing
 
 ---
 
 ## Key Workflows
 
 ### 1. Parameter Scans
-Explore system response over (Ω, Δ, V, γ)
+Explore system response over (Ω, Δ, V, γ, γφ)
 
-### 2. Blockade Regime Identification
-Quantify suppression of double excitation
-
-### 3. Open-System Effects
+### 2. Open-System Effects
 Analyze decoherence and performance degradation
 
-### 4. Gate Fidelity Landscapes
-Compute fidelity of target states or operations across parameter space
+### 3. Gate Fidelity Landscapes
+Evaluate CZ fidelity under noise
 
-### 5. Optimization
-Identify high-performance regions and refine parameters
+### 4. Effective Coordinate Discovery
+Identify reduced descriptions (γ_eff)
+
+### 5. Scaling Collapse
+Test universality across control parameters
+
+### 6. Boundary Extraction
+Locate phase-lock survival thresholds
 
 ---
 
@@ -91,27 +133,36 @@ Identify high-performance regions and refine parameters
 
 ```
 rydberg-parameter-lab/
-├── README.md
-├── docs/
 ├── notebooks/
-│   ├── 01_single_atom_scan.ipynb
-│   ├── 02_blockade_regime.ipynb
-│   ├── 03_open_system_dynamics.ipynb
-│   ├── 04_fidelity_landscape.ipynb
-│   └── 05_parameter_optimization.ipynb
-├── src/rydberg_parameter_lab/
-│   ├── hamiltonians.py
-│   ├── lindblad.py
-│   ├── parameters.py
-│   ├── scans.py
-│   ├── blockade.py
-│   ├── metrics.py
-│   ├── optimize.py
-│   └── plotting.py
-├── figures/
-├── tests/
-└── environment.yml
+│   ├── 18–21   noise robustness + order parameter
+│   ├── 22–23   effective noise collapse
+│   ├── 24–26   optimal collapse direction
+│   ├── 27–29   universality breakdown
+│   ├── 30–32   boundary scaling laws
+│   └── 33      full scaling collapse
 ```
+
+---
+
+## Current Status
+
+- Effective noise coordinate identified  
+- Near-universal scaling law discovered  
+- Phase boundary extracted  
+- Structured breakdown isolated  
+
+---
+
+## Next Step
+
+Extend scaling to include a third variable:
+
+    S = Ŝ(γ_eff · T/T_c, additional_dimension)
+
+Likely candidates:
+- adiabaticity (1/T)
+- pulse curvature
+- control bandwidth
 
 ---
 
@@ -137,30 +188,6 @@ conda activate rydberg-parameter-lab
 - SciPy
 - Matplotlib
 - QuTiP
-
----
-
-## Roadmap
-
-- [ ] Implement single-atom solver
-- [ ] Two-atom blockade simulation
-- [ ] Lindblad open-system module
-- [ ] Fidelity benchmarking tools
-- [ ] Parameter landscape visualization
-- [ ] Pulse optimization layer
-- [ ] Reproducible benchmark suite
-
----
-
-## Research Direction
-
-This project is structured to support:
-
-- physically grounded modeling of neutral-atom systems  
-- analysis of tradeoffs between coherence, interaction strength, and control  
-- reproducible evaluation of quantum information performance  
-
-The emphasis is on clarity of physical assumptions, numerical stability, and interpretable results.
 
 ---
 
