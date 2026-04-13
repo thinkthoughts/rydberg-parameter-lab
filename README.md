@@ -8,8 +8,8 @@ Simulation and analysis of Rydberg atom interactions across control parameters (
 
 ## Key Results
 
-- Emergence of an **effective noise coordinate**:
-  γ_eff = γ + λ·γ_φ  
+- Emergence of an **effective noise coordinate**:  
+  `γ_eff = γ + λ·γ_φ`  
 - Identification of a **controlled breakdown** of 1D scaling at low T  
 - Recovery via a **low-dimensional (2D) model** with near-perfect predictive accuracy  
 - Extraction of a **curved phase boundary** not captured by linear models  
@@ -33,6 +33,8 @@ At a deeper level:
 > The system admits a universal description, but not via a fixed decay rate —
 > instead through an emergent, scale-dependent effective dynamics.
 
+This shifts the interpretation from parameter fitting to identifying an underlying dynamical law.
+
 ---
 
 ## Emergent Effective Noise Coordinate
@@ -41,7 +43,7 @@ At a deeper level:
 
 Across a wide parameter range:
 
-γ_eff = γ + λ·γ_φ
+`γ_eff = γ + λ·γ_φ`
 
 This defines a dominant direction in noise space governing system response.
 
@@ -90,7 +92,7 @@ The system is not governed by a constant decay rate.
 
 Instead, the dynamics follow:
 
-dS/dx = −Γ_eff(x) · S
+`dS/dx = −Γ_eff(x) · S`
 
 where Γ_eff(x) is a **scale-dependent effective rate**.
 
@@ -109,7 +111,7 @@ where Γ_eff(x) is a **scale-dependent effective rate**.
 
 ### Key Insight
 
-> Universality is not driven by a constant rate,  
+> Universality is not governed by a constant rate,  
 > but by a structured, scale-dependent evolution of noise.
 
 This explains:
@@ -118,6 +120,8 @@ This explains:
 - why stretched-exponential fits succeed  
 - why a low-dimensional but nontrivial structure emerges
 
+---
+
 ## Phase Boundary: Model vs Reality
 
 ![Boundary comparison](figures/universality_boundary.png)
@@ -125,7 +129,7 @@ This explains:
 - White: effective-noise prediction  
 - Red: true phase boundary  
 
-The curvature reveals structure beyond simple reductions.
+The curvature reveals structure beyond any 1D effective-noise reduction.
 
 ---
 
@@ -141,7 +145,7 @@ H = Σ_i [(Ω/2) σ_x^(i) − Δ n_i] + V n₁ n₂
 
 ### Open-System Dynamics (Lindblad)
 
-dρ/dt = −i[H, ρ] + Σ_k (L_k ρ L_k† − 1/2 {L_k† L_k, ρ})
+`dρ/dt = −i[H, ρ] + Σ_k (L_k ρ L_k† − 1/2 {L_k† L_k, ρ})`
 
 Noise channels:
 - spontaneous emission (γ)
@@ -162,23 +166,29 @@ Noise channels:
 
 ## Repository Structure
 
+```
 rydberg-parameter-lab/
 ├── README.md  
 ├── notebooks/  
 ├── src/  
 ├── figures/  
 └── environment.yml  
+```
 
 ---
 
 ## Installation
 
+```bash
 pip install -r requirements.txt
+```
 
 or
 
+```bash
 conda env create -f environment.yml  
-conda activate rydberg-parameter-lab  
+conda activate rydberg-parameter-lab
+```
 
 ---
 
@@ -200,10 +210,4 @@ This project focuses on:
 - reducing high-dimensional parameter spaces  
 - understanding **limits of effective models**  
 - constructing **interpretable scaling laws**  
-- connecting open-system dynamics to **emergent universal behavior**
-
----
-
-## License
-
-MIT License
+- connecting open-system dynamics to **emergent universal
