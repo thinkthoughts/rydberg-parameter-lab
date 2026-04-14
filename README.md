@@ -156,6 +156,48 @@ This explains:
 
 ---
 
+## Mechanism: Rate Distribution → Stretched Universality
+
+![Rate distribution collapse](figures/rate_distribution_stretched.png)
+
+We test whether a distribution of decay rates can explain the observed
+non-exponential universality.
+
+Consider an ensemble of exponential decays:
+
+S(x) = ⟨exp(−Γ x)⟩
+
+where Γ varies across the system.
+
+### Result
+
+- The ensemble-averaged decay is **not exponential**
+- It is accurately described by a **stretched exponential**:
+
+S(x) ≈ exp(−a x^b)
+
+- The fitted exponent b closely matches the empirical value observed in the system
+
+### Interpretation
+
+- The system behaves as a **superposition of exponential processes**
+- Different noise channels contribute distinct decay rates
+- The observed universality emerges from this **rate distribution**
+
+### Key Insight
+
+> Stretched-exponential universality arises from a distribution of decay rates,
+> not from a single effective rate.
+
+This connects:
+
+- channel decomposition (Notebook 41)  
+- emergent rate behavior (Notebook 42)  
+- non-exponential decay (Notebook 44)  
+- universal scaling collapse (Notebook 37)
+
+---
+
 ## Phase Boundary: Model vs Reality
 
 ![Boundary comparison](figures/universality_boundary.png)
