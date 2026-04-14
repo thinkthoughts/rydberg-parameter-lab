@@ -174,6 +174,40 @@ b = Functional[Γ_eff(x)]
 
 ---
 
+## Learned Universality Map
+
+![Learned universality](figures/learned_universality_map.png)
+
+We learn a predictive mapping from the effective-rate process Γ_eff(x) to the
+stretched-exponential exponent b.
+
+The mapping is constructed using a low-dimensional representation (PCA) of Γ_eff(x).
+
+### Interpretation
+
+- Each point corresponds to a full effective-rate process Γ_eff(x)  
+- The axes (PC1, PC2) represent dominant modes of variation:
+  - PC1: global slope / trend  
+  - PC2: curvature / modulation  
+- Color encodes the predicted stretching exponent b  
+
+### Key observations
+
+- b varies smoothly across the low-dimensional manifold  
+- The mapping is structured and continuous  
+- Scalar summaries (e.g. CV) are insufficient  
+
+### Conclusion
+
+> The stretching exponent is not just a fit parameter —  
+> it is a **learnable function of the effective-rate process**.
+
+This establishes a predictive form of universality:
+
+b ≈ LearnedModel[Γ_eff(x)]
+
+---
+
 ## Phase Boundary: Model vs Reality
 
 ![Boundary comparison](figures/universality_boundary.png)
