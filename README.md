@@ -176,6 +176,45 @@ S(x) ≈ exp(−a x^b)
 
 ---
 
+## Quantifying the Stretching Exponent
+
+![b vs heterogeneity](figures/b_vs_cv.png)
+
+We now quantify how the stretching exponent \(b\) depends on the
+structure of the underlying rate distribution.
+
+### Observations
+
+- Different distribution families (gamma, lognormal) produce different raw trends  
+- When plotted against **rate heterogeneity (CV)**, all data collapses  
+- This shows that \(b\) depends on **distribution width**, not distribution type  
+
+### Result
+
+- Narrow rate distributions → \(b \approx 1\) (exponential limit)  
+- Broad rate distributions → \(b < 1\) (stretched regime)  
+
+### Empirical Law
+
+We find that \(b\) follows a simple relation:
+
+b ≈ 1 / (1 + α · CV^β)
+
+where CV is the coefficient of variation of the decay rates.
+
+### Interpretation
+
+- The exponent \(b\) is a **direct measure of rate heterogeneity**  
+- It encodes how many effective decay channels contribute  
+- It provides a bridge from **microscopic channel structure → macroscopic universality**
+
+### Key Insight
+
+> The stretching exponent is not arbitrary —  
+> it is determined by the heterogeneity of the underlying decay processes.
+
+---
+
 ## Phase Boundary: Model vs Reality
 
 ![Boundary comparison](figures/universality_boundary.png)
