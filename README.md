@@ -151,6 +151,29 @@ b = f(CV, structure of Γ_eff(x))
 
 ---
 
+## Functional Universality of Decay Dynamics
+
+![Functional universality](figures/functional_universality_map.png)
+
+The stretching exponent b is not determined by a single scalar (e.g., CV).
+
+Instead:
+
+b = Functional[Γ_eff(x)]
+
+### Key observations
+
+- Different shapes of Γ_eff(x) produce different b  
+- Even with similar rate heterogeneity (CV), b varies  
+- Structural features (slope, curvature, range) jointly determine behavior  
+
+### Interpretation
+
+- Universality is governed by the **structure of the effective-rate process**
+- The system belongs to a **functional universality class**, not just a statistical one
+
+---
+
 ## Phase Boundary: Model vs Reality
 
 ![Boundary comparison](figures/universality_boundary.png)
