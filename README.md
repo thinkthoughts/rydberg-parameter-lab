@@ -189,6 +189,32 @@ b ≈ LearnedModel[Γ_eff(x)]
 
 ---
 
+## Analytic Approximation for Universality
+
+![Analytic b prediction](figures/analytic_b_prediction.png)
+
+We derive an interpretable approximation for the stretching exponent:
+
+b ≈ α + β·⟨|dΓ/dx|⟩ + γ·⟨|d²Γ/dx²|⟩ + δ·CV
+
+### Interpretation
+
+- slope → global trend  
+- curvature → structural nonlinearity  
+- CV → heterogeneity  
+
+### Result
+
+- Analytic predictions match fitted values with high accuracy  
+- Provides an interpretable bridge between dynamics and universality  
+
+### Conclusion
+
+> The stretched exponent is not only learnable —  
+> it is **approximately derivable from geometric features of Γ_eff(x)**.
+
+---
+
 ## Phase Boundary: Model vs Reality
 
 ![Boundary comparison](figures/universality_boundary.png)
