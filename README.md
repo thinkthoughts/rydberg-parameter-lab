@@ -72,6 +72,40 @@ A simple 2D model restores accuracy:
 
 ---
 
+## Exponential Limit Test
+
+![Log-linear test](figures/log_linear_test.png)
+
+We test whether the final collapsed coordinate reduces the dynamics
+to a pure exponential decay:
+
+S(x) ≈ exp(−Γ x)
+
+### Results
+
+- log(S) is not linear in x (R² ≈ 0.89)  
+- clear curvature persists across scales  
+- stretched-exponential form provides a significantly better fit  
+
+### Conclusion
+
+> Even in the optimal collapsed coordinate, the system does not reduce
+> to a simple exponential decay.
+
+Instead, it follows a structured universal law:
+
+S(x) ≈ exp(−a x^b)
+
+### Interpretation
+
+- The system cannot be described by a constant decay rate  
+- Universality is preserved, but in a **non-exponential form**  
+- The observed behavior reflects **emergent structure in open-system dynamics**
+
+(See also: Scale-Dependent Effective Rate section below)
+
+---
+
 ## True Universality (Constrained)
 
 ![True universality collapse](figures/true_universality_test.png)
