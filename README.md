@@ -98,6 +98,23 @@ dS/dx = −Γ_eff(x) · S
 
 S(x) ≈ exp(−a x^b)
 
+**Best-fit exponent:** b ≈ 0.99 (baseline case)
+
+### Observations
+
+- Pure exponential (b = 1) fails  
+- Stretched exponential captures the full decay  
+- The exponent b varies systematically across protocols  
+
+### Connection to Structure
+
+- The near-unity value b ≈ 0.99 corresponds to **low heterogeneity / structured rate dynamics**
+- Deviations in b across protocols are explained by:
+  
+  b = f(CV, structure of Γ_eff(x))
+
+→ This directly motivates the **Dynamical Universality Class** section below
+
 - Pure exponential (b = 1) fails  
 - Stretched exponential succeeds  
 - b varies by protocol  
