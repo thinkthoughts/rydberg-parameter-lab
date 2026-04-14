@@ -110,14 +110,8 @@ S(x) ≈ exp(−a x^b)
 
 - The near-unity value b ≈ 0.99 corresponds to **low heterogeneity / structured rate dynamics**
 - Deviations in b across protocols are explained by:
-  
+
   b = f(CV, structure of Γ_eff(x))
-
-→ This directly motivates the **Dynamical Universality Class** section below
-
-- Pure exponential (b = 1) fails  
-- Stretched exponential succeeds  
-- b varies by protocol  
 
 ---
 
@@ -142,13 +136,6 @@ b = f(CV, structure of Γ_eff(x))
 - Structured rate features resolve mismatch  
 - Universality depends on dynamics, not just disorder  
 
-### Interpretation
-
-- System belongs to a **dynamical universality class**  
-- Governed by:
-  - statistical variation (CV)
-  - dynamical structure (Γ_eff)
-
 ---
 
 ## Functional Universality of Decay Dynamics
@@ -167,34 +154,29 @@ b = Functional[Γ_eff(x)]
 - Even with similar rate heterogeneity (CV), b varies  
 - Structural features (slope, curvature, range) jointly determine behavior  
 
-### Interpretation
-
-- Universality is governed by the **structure of the effective-rate process**
-- The system belongs to a **functional universality class**, not just a statistical one
-
 ---
 
-## Learned Universality Map
+## Learned Universality (Predictive Mapping)
 
 ![Learned universality](figures/learned_universality_map.png)
 
-We learn a predictive mapping from the effective-rate process Γ_eff(x) to the
-stretched-exponential exponent b.
+Having established that b depends on the full structure of Γ_eff(x),  
+we now learn this dependence explicitly.
 
 The mapping is constructed using a low-dimensional representation (PCA) of Γ_eff(x).
 
 ### Interpretation
 
 - Each point corresponds to a full effective-rate process Γ_eff(x)  
-- The axes (PC1, PC2) represent dominant modes of variation:
+- Axes represent dominant modes:
   - PC1: global slope / trend  
   - PC2: curvature / modulation  
-- Color encodes the predicted stretching exponent b  
+- Color encodes predicted stretching exponent b  
 
 ### Key observations
 
-- b varies smoothly across the low-dimensional manifold  
-- The mapping is structured and continuous  
+- b varies smoothly across the manifold  
+- Mapping is structured and continuous  
 - Scalar summaries (e.g. CV) are insufficient  
 
 ### Conclusion
@@ -202,9 +184,8 @@ The mapping is constructed using a low-dimensional representation (PCA) of Γ_ef
 > The stretching exponent is not just a fit parameter —  
 > it is a **learnable function of the effective-rate process**.
 
-This establishes a predictive form of universality:
-
-b ≈ LearnedModel[Γ_eff(x)]
+b ≈ LearnedModel[Γ_eff(x)]  
+→ a predictive, low-dimensional universality mapping
 
 ---
 
