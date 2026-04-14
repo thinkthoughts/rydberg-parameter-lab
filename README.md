@@ -2,7 +2,8 @@
 
 ![Rydberg Parameter Lab](figures/banner.png)
 
-Simulation and analysis of Rydberg atom interactions across control parameters (Ω, Δ, V, γ), including Lindblad dynamics and gate-fidelity landscapes for neutral-atom quantum computing.
+Simulation and analysis of **Rydberg atom interactions** across (Ω, Δ, V, γ),  
+with **Lindblad dynamics** and **gate-fidelity landscapes** for neutral-atom quantum computing.
 
 ---
 
