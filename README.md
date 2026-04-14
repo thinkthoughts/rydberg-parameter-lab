@@ -14,7 +14,9 @@ Simulation and analysis of Rydberg atom interactions across control parameters (
 - Recovery via a **low-dimensional (2D) model** with near-perfect predictive accuracy  
 - Extraction of a **curved phase boundary** not captured by linear models  
 - Evidence for a **constrained universality via power-law scaling collapse**  
-- Discovery of an **emergent scale-dependent decay rate**, replacing simple factorized noise models  
+- Demonstration that **exponential decay is not the correct universal description**  
+- Discovery of an **emergent scale-dependent decay rate**  
+- Identification of a **rate-distribution mechanism underlying stretched-exponential universality**
 
 ---
 
@@ -30,10 +32,8 @@ A central observation:
 
 At a deeper level:
 
-> The system admits a universal description, but not via a fixed decay rate —
+> The system admits a universal description, but not via a fixed decay rate —  
 > instead through an emergent, scale-dependent effective dynamics.
-
-This shifts the interpretation from parameter fitting to identifying an underlying dynamical law.
 
 ---
 
@@ -72,6 +72,18 @@ A simple 2D model restores accuracy:
 
 ---
 
+## True Universality (Constrained)
+
+![True universality collapse](figures/true_universality_test.png)
+
+We test whether the system admits a **true 1D universal description**.
+
+- Power-law rescaling produces near-perfect collapse  
+- Alternative forms fail  
+- Universality exists, but only in a **restricted functional form**
+
+---
+
 ## Exponential Limit Test
 
 ![Log-linear test](figures/log_linear_test.png)
@@ -92,7 +104,7 @@ S(x) ≈ exp(−Γ x)
 > Even in the optimal collapsed coordinate, the system does not reduce
 > to a simple exponential decay.
 
-Instead, it follows a structured universal law:
+Instead, it follows:
 
 S(x) ≈ exp(−a x^b)
 
@@ -101,20 +113,6 @@ S(x) ≈ exp(−a x^b)
 - The system cannot be described by a constant decay rate  
 - Universality is preserved, but in a **non-exponential form**  
 - The observed behavior reflects **emergent structure in open-system dynamics**
-
-(See also: Scale-Dependent Effective Rate section below)
-
----
-
-## True Universality (Constrained)
-
-![True universality collapse](figures/true_universality_test.png)
-
-We test whether the system admits a **true 1D universal description**.
-
-- Power-law rescaling produces near-perfect collapse  
-- Alternative forms fail  
-- Universality exists, but only in a **restricted functional form**
 
 ---
 
@@ -134,25 +132,13 @@ where Γ_eff(x) is a **scale-dependent effective rate**.
 
 - Γ_eff(x) is clearly **not constant**  
 - Strong variation at small x indicates **nontrivial early-time dynamics**  
-- The flat fitted line corresponds to a **coarse-grained approximation**, not the true behavior  
+- The flat fitted line corresponds to a **coarse-grained approximation**
 
 ### Interpretation
 
 - The system does not reduce to a single exponential decay  
-- Instead, decay emerges from **coupled open-system channels**  
-- The observed stretched-exponential universality arises from a  
-  **distribution of effective rates across scales**
-
-### Key Insight
-
-> Universality is not governed by a constant rate,  
-> but by a structured, scale-dependent evolution of noise.
-
-This explains:
-
-- why simple exponential models fail  
-- why stretched-exponential fits succeed  
-- why a low-dimensional but nontrivial structure emerges
+- Decay emerges from **coupled open-system channels**  
+- The stretched-exponential form reflects **scale-dependent effective dynamics**
 
 ---
 
@@ -160,10 +146,9 @@ This explains:
 
 ![Rate distribution collapse](figures/rate_distribution_stretched.png)
 
-We test whether a distribution of decay rates can explain the observed
-non-exponential universality.
+We test whether a distribution of decay rates explains the observed universality.
 
-Consider an ensemble of exponential decays:
+Consider:
 
 S(x) = ⟨exp(−Γ x)⟩
 
@@ -171,30 +156,23 @@ where Γ varies across the system.
 
 ### Result
 
-- The ensemble-averaged decay is **not exponential**
-- It is accurately described by a **stretched exponential**:
+- The ensemble decay is **not exponential**  
+- It is accurately described by:
 
 S(x) ≈ exp(−a x^b)
 
-- The fitted exponent b closely matches the empirical value observed in the system
+- The exponent b matches empirical observations
 
 ### Interpretation
 
-- The system behaves as a **superposition of exponential processes**
-- Different noise channels contribute distinct decay rates
-- The observed universality emerges from this **rate distribution**
+- The system behaves as a **superposition of exponential processes**  
+- Different noise channels contribute distinct decay rates  
+- Universality emerges from a **distribution of rates**
 
 ### Key Insight
 
-> Stretched-exponential universality arises from a distribution of decay rates,
+> Stretched-exponential universality arises from a distribution of decay rates,  
 > not from a single effective rate.
-
-This connects:
-
-- channel decomposition (Notebook 41)  
-- emergent rate behavior (Notebook 42)  
-- non-exponential decay (Notebook 44)  
-- universal scaling collapse (Notebook 37)
 
 ---
 
@@ -205,7 +183,7 @@ This connects:
 - White: effective-noise prediction  
 - Red: true phase boundary  
 
-The curvature reveals structure beyond any 1D effective-noise reduction.
+The curvature reveals structure beyond any 1D reduction.
 
 ---
 
@@ -232,7 +210,7 @@ Noise channels:
 ## Workflows
 
 - Parameter sweeps over (Ω, Δ, V, γ, γ_φ)
-- Lindblad open-system simulation
+- Lindblad simulation
 - CZ gate construction and compensation
 - Fidelity, coherence, leakage metrics
 - Phase-boundary extraction
@@ -286,4 +264,10 @@ This project focuses on:
 - reducing high-dimensional parameter spaces  
 - understanding **limits of effective models**  
 - constructing **interpretable scaling laws**  
-- connecting open-system dynamics to **emergent universal
+- connecting open-system dynamics to **emergent universal behavior**
+
+---
+
+## License
+
+MIT License
