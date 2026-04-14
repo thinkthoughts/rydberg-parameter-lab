@@ -94,7 +94,7 @@ dS/dx = −Γ_eff(x) · S
 
 ## Stretched-Exponential Universal Law
 
-![Final universal law](figures/final_universal_law.png)
+![Final universal law](figures/stretched_exponential_fit.png)
 
 S(x) ≈ exp(−a x^b)
 
@@ -106,7 +106,7 @@ S(x) ≈ exp(−a x^b)
 
 ## From Rate Distributions to Universality
 
-![Rate distribution emergence](figures/rate_distribution_to_stretched.png)
+![Rate distribution emergence](figures/rate_distribution_mechanism.png)
 
 - Arises from mixtures of decay rates  
 - Reflects heterogeneous effective dynamics  
@@ -115,7 +115,7 @@ S(x) ≈ exp(−a x^b)
 
 ## Dynamical Universality Class
 
-![Structured universality surface](figures/structured_universality_surface.png)
+![Structured universality surface](figures/dynamical_universality_surface.png)
 
 b = f(CV, structure of Γ_eff(x))
 
