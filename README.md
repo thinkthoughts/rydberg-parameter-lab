@@ -125,6 +125,38 @@ This connects the full pipeline:
 
 ---
 
+## Universality Phase Diagram (Physical Control Ratios)
+
+![Ratio phase diagram](figures/ratio_phase_diagram.png)
+
+Rewriting the universality map in terms of physical control ratios:
+
+- γ / Ω (dissipation vs drive)
+- V / Ω (interaction vs drive)
+
+reveals a direct mapping:
+
+b = f(γ/Ω, V/Ω)
+
+Key observations:
+
+- increasing γ/Ω increases b (stronger dephasing → faster effective decay)
+- increasing V/Ω decreases b (stronger interactions → slower effective decay)
+- the stretched exponent b becomes a **physical observable tied to control parameters**
+
+This aligns with known Rydberg physics:
+
+- interaction-induced dephasing grows with atom density and interactions :contentReference[oaicite:0]{index=0}  
+- dissipation and dephasing modify coherence and decay dynamics in open quantum systems :contentReference[oaicite:1]{index=1}  
+
+Thus:
+
+(Ω, Δ, V, γ, γ_φ)  
+→ Γ_eff(x)  
+→ universality class (b)
+
+---
+
 ## Functional Universality
 
 ![Functional universality](figures/functional_universality_map.png)
