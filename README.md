@@ -97,6 +97,34 @@ S(x) ≈ exp(−a x^b)
 
 ---
 
+## Universality Phase Diagram (Physical Parameter Space)
+
+![Phase diagram](figures/phase_diagram_b.png)
+
+Sweeping Lindblad-inspired physical parameters:
+
+- dephasing amplitude  
+- interaction strength  
+
+reveals a smooth universality map:
+
+b = f(dephasing, interaction)
+
+Key observations:
+
+- increasing interaction strength lowers b (sub-exponential behavior)
+- increasing dephasing raises b (super-exponential behavior)
+- the stretched exponent becomes a **physical observable**, not just a fit
+
+This connects the full pipeline:
+
+(Ω, Δ, V, γ, γ_φ)  
+→ Γ_eff(x)  
+→ b_local(x)  
+→ global exponent b  
+
+---
+
 ## Functional Universality
 
 ![Functional universality](figures/functional_universality_map.png)
