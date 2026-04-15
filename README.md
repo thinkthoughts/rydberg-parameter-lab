@@ -2,86 +2,48 @@
 
 ![Rydberg Parameter Lab](figures/banner.png)
 
-**From Lindblad dynamics → structured rate processes → universal scaling laws**
+**From Lindblad dynamics → structured rate processes → universal scaling laws → physical phase transitions**
+
+---
+
+## 🚀 QuickStart
+
+Explore the full pipeline interactively:
+
+[![Open Notebook 58 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thinkthoughts/rydberg-parameter-lab/blob/main/notebooks/58_lindblad_to_gamma_pipeline.ipynb)
+
+**Jump to the physics result (blockade transition):**
+
+[![Open Notebook 63 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thinkthoughts/rydberg-parameter-lab/blob/main/notebooks/63_blockade_boundary_transition.ipynb)
+
+---
+
+### Suggested progression
+
+- Notebook 58 — Lindblad → Γ(x) → S(x)  
+- Notebook 59–61 — universality phase diagrams  
+- Notebook 62 — labeled regimes  
+- Notebook 63 — blockade transition  
 
 ---
 
 ## Key Results
 
-- Emergence of an **effective noise coordinate**  
-  γ_eff = γ + λ·γ_φ  
-
-- Identification of a **controlled breakdown of 1D scaling**
-
-- Recovery via a **low-dimensional (2D) model**
-
-- Discovery of a **scale-dependent decay rate Γ_eff(x)**
-
-- Derivation of **stretched-exponential universality**
-
-- Identification of a **local exponent field**  
-  b_local(x) = x Γ(x) / ∫₀ˣ Γ(u)
-
-- Final result: **global exponent as projection**
-  
-  b ≈ ∫ w(x) b_local(x) dx  
-
-- **Projection weight derived from fit sensitivity**
-  
-  w(x) ∝ |∂ log S(x) / ∂ b|
+- Effective noise coordinate: γ_eff = γ + λ·γ_φ  
+- Breakdown of 1D scaling  
+- Recovery via structured Γ(x)  
+- Stretched-exponential universality  
+- Local exponent field b_local(x)  
+- Global exponent as projection  
+- Sensitivity-derived projection weight  
 
 ---
 
 ## Overview
 
-This project studies **noise-affected Rydberg CZ gates** and reveals hidden structure in open-system quantum dynamics.
-
-Core shift:
-
-> Dynamics are governed by a **structured, scale-dependent rate process Γ(x)**,  
-> not a constant decay rate.
+Dynamics are governed by a **structured, scale-dependent rate process Γ(x)**.
 
 ![Theory summary](figures/theory_figure.png)
-
----
-
-## Emergent Effective Noise Coordinate
-
-![Effective noise collapse](figures/effective_noise_collapse.png)
-
-γ_eff = γ + λ·γ_φ  
-
-- Defines dominant noise direction  
-- Enables approximate dimensionality reduction  
-
----
-
-## Breakdown of 1D Scaling
-
-![1D failure](figures/1d_failure.png)
-
-- Alignment fails systematically  
-- Deviations are structured, not noise  
-
----
-
-## Low-Dimensional Model Recovery
-
-![2D fit quality](figures/2d_fit_quality.png)
-
-- Near-perfect prediction  
-- System is low-dimensional, but not strictly 1D  
-
----
-
-## Emergent Scale-Dependent Rate
-
-![Emergent rate](figures/emergent_rate.png)
-
-dS/dx = −Γ_eff(x) · S  
-
-- Γ_eff(x) varies across scale  
-- Encodes the true dynamics  
 
 ---
 
@@ -91,70 +53,14 @@ dS/dx = −Γ_eff(x) · S
 
 S(x) ≈ exp(−a x^b)
 
-- Pure exponential fails  
-- Stretched exponential captures behavior  
-- Exponent b varies across protocols  
-
 ---
 
-## Universality Phase Diagram (Physical Parameter Space)
+## Universality Phase Diagrams
 
 ![Phase diagram](figures/phase_diagram_b.png)
-
-Sweeping physical parameters reveals:
-
-b = f(dephasing, interaction)
-
-- increasing interaction → lowers b  
-- increasing dephasing → raises b  
-
-→ the stretched exponent becomes a **physical observable**
-
----
-
-## Universality Phase Diagram (Physical Control Ratios)
-
 ![Ratio phase diagram](figures/ratio_phase_diagram.png)
 
-Rewriting in experimental ratios:
-
-b = f(γ/Ω, V/Ω)
-
-- γ/Ω ↑ → b ↑ (smoother decay)  
-- V/Ω ↑ → b ↓ (structured decay)  
-
----
-
-## Universality Phase Diagram (Full Physical Parameters)
-
-![Omega vs V](figures/omega_vs_V.png)
-![gamma vs gamma_phi](figures/gamma_vs_gamma_phi.png)
-
-Mapping:
-
-(Ω, Δ, V, γ, γ_φ) → b
-
-reveals:
-
-- drive vs interaction competition  
-- decay vs dephasing competition  
-
-> Universality is directly controlled by physical parameters.
-
----
-
-## Labeled Universality Regimes
-
-![Labeled regimes](figures/labeled_regimes.png)
-
-The universality map partitions into:
-
-- **Drive-dominated**
-- **Interaction-dominated (Rydberg blockade)**
-- **Dephasing-influenced**
-- **Crossover**
-
-> The exponent b becomes a **coordinate on a physical phase diagram**
+b = f(physical parameters)
 
 ---
 
@@ -164,19 +70,13 @@ The universality map partitions into:
 
 b = Functional[Γ_eff(x)]
 
-- Scalar summaries fail  
-- Structure determines behavior  
-
 ---
 
-## Learned Universality Mapping
+## Learned Mapping
 
 ![Learned universality](figures/learned_universality_map.png)
 
 b ≈ LearnedModel[Γ_eff(x)]
-
-- Low-dimensional embedding  
-- Smooth predictive mapping  
 
 ---
 
@@ -184,40 +84,13 @@ b ≈ LearnedModel[Γ_eff(x)]
 
 ![Analytic b prediction](figures/analytic_b_prediction.png)
 
-b ≈ α + β⟨|Γ'|⟩ + γ⟨|Γ''|⟩ + δ·CV  
-
-- Interpretable  
-- Matches data  
-
----
-
-## First-Principles Derivation
-
-![Power-law Γ](figures/power_law_rates.png)  
-![Exact stretched law](figures/exact_stretched_from_gamma.png)
-
-If:
-
-Γ(x) = c x^(m−1)
-
-Then:
-
-S(x) = exp(−(c/m) x^m)
-
-→ exact stretched exponential (b = m)
-
 ---
 
 ## Local Exponent Field
 
 ![Local exponent field](figures/local_exponent_fields.png)
 
-b_local(x) = x Γ(x) / ∫ Γ  
-
-- constant for power-law Γ  
-- variable for structured Γ  
-
-> The exponent is a **field over scale**
+b_local(x) = x Γ(x) / ∫ Γ
 
 ---
 
@@ -227,61 +100,40 @@ b_local(x) = x Γ(x) / ∫ Γ
 
 b ≈ ∫ w(x) b_local(x) dx  
 
-- depends on scale weighting  
-- not a single-scale property  
-
 ---
 
 ## Sensitivity-Derived Projection Weight
 
 ![Sensitivity weight](figures/sensitivity_weight_derivation.png)
 
-From:
-
-S(x) = exp(−a x^b)
-
-we obtain:
-
-∂ log S / ∂ b = −a x^b log x  
-
-→
-
-w(x) ∝ x^b |log x|
+w(x) ∝ |∂ log S(x) / ∂ b|
 
 ---
 
-### Interpretation
+## Blockade Boundary and Universality Transition
 
-- small x suppressed  
-- large x suppressed  
-- **intermediate x dominates**
+![Blockade transition](figures/blockade_transition_b.png)
+![Blockade sensitivity](figures/blockade_sensitivity.png)
 
-→ exponent emerges from a **specific scale window**
+V / Ω ≈ 1 marks the Rydberg blockade onset.
 
----
-
-### Best-fit projection
-
-![Best projection](figures/best_projection.png)
-
-w(x) ≈ x^1.1 (1−x)^2.3  
-
-- matches empirical fits  
-- selects dominant scale region  
+![Decay curves](figures/blockade_decay_curves.png)
+![Gamma deformation](figures/blockade_gamma.png)
+![Local exponent](figures/blockade_blocal.png)
+![Fit quality](figures/blockade_fit_quality.png)
 
 ---
 
 ## Interpretation
 
-> The stretched exponent is not a fit parameter.  
-> It is a **compressed summary of a scale-dependent exponent field**.
+The exponent **b acts as a detector of many-body constraint onset**.
 
 Hierarchy:
 
-Γ(x)  
-→ b_local(x)  
-→ sensitivity-weighted projection  
-→ b  
+V / Ω  
+→ Γ(x) deformation  
+→ b_local(x) deformation  
+→ global exponent shift  
 
 ---
 
@@ -293,60 +145,11 @@ H = Σ_i [(Ω/2) σ_x^(i) − Δ n_i] + V n₁ n₂
 
 dρ/dt = −i[H, ρ] + Σ_k (L_k ρ L_k† − ½ {L_k† L_k, ρ})
 
-Noise:
-- γ  
-- γ_φ  
-
----
-
-## Workflows
-
-- Lindblad simulation  
-- Parameter sweeps  
-- CZ gate construction  
-- Scaling-law extraction  
-- Universality modeling  
-
----
-
-## Repository Structure
-
-rydberg-parameter-lab/  
-├── README.md  
-├── notebooks/  
-├── src/  
-├── figures/  
-└── environment.yml  
-
 ---
 
 ## Installation
 
 pip install -r requirements.txt  
-
-or  
-
-conda env create -f environment.yml  
-conda activate rydberg-parameter-lab  
-
----
-
-## Dependencies
-
-- Python 3.10+  
-- NumPy  
-- SciPy  
-- Matplotlib  
-- QuTiP  
-
----
-
-## Research Direction
-
-- Structure in noisy quantum systems  
-- Dynamical universality  
-- Effective-rate geometry  
-- Scaling laws beyond exponentials  
 
 ---
 
