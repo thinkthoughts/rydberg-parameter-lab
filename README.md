@@ -8,35 +8,34 @@
 
 ## Key Results
 
-- Emergence of an **effective noise coordinate**:  
+- Emergence of an **effective noise coordinate**  
   γ_eff = γ + λ·γ_φ  
-- Identification of a **controlled breakdown of 1D scaling** at low T  
-- Recovery via a **low-dimensional (2D) model** with near-perfect predictive accuracy  
-- Extraction of a **curved phase boundary** beyond linear effective-noise models  
-- Evidence for **constrained universality via power-law scaling alignment**  
-- Discovery of an **emergent scale-dependent decay rate Γ_eff(x)**  
-- Derivation of a **stretched-exponential universal response law**  
-- Identification of a **dynamical universality class**:
 
-  b = f(CV, structure of Γ_eff(x))
+- Identification of a **controlled breakdown of 1D scaling**
+
+- Recovery via a **low-dimensional (2D) model**
+
+- Discovery of a **scale-dependent decay rate Γ_eff(x)**
+
+- Derivation of **stretched-exponential universality**
+
+- Identification of a **local exponent field**  
+  b_local(x) = x Γ(x) / ∫₀ˣ Γ(u)
+
+- Final result: **global exponent as projection**
+  
+  b ≈ ∫ w(x) b_local(x) dx  
 
 ---
 
 ## Overview
 
-This project studies **noise-affected Rydberg CZ gates** and identifies **low-dimensional structure** in open-system quantum dynamics.
+This project studies **noise-affected Rydberg CZ gates** and reveals hidden structure in open-system quantum dynamics.
 
-A central observation:
+Core shift:
 
-System behavior approximately reduces from a 2D noise space  
-to a 1D effective coordinate, but this reduction fails in a  
-predictable regime and can be systematically repaired.
-
-Deeper structure:
-
-The system admits a universal description,  
-not via a constant decay rate,  
-but through a structured, scale-dependent rate process.
+> Dynamics are governed by a **structured, scale-dependent rate process Γ(x)**,  
+> not a constant decay rate.
 
 ---
 
@@ -46,7 +45,7 @@ but through a structured, scale-dependent rate process.
 
 γ_eff = γ + λ·γ_φ  
 
-- Defines dominant direction in noise space  
+- Defines dominant noise direction  
 - Enables approximate dimensionality reduction  
 
 ---
@@ -55,9 +54,8 @@ but through a structured, scale-dependent rate process.
 
 ![1D failure](figures/1d_failure.png)
 
-- Alignment fails at low T  
-- Deviations are systematic (not noise)  
-- Indicates missing structure beyond γ_eff  
+- Alignment fails systematically  
+- Deviations are structured, not noise  
 
 ---
 
@@ -66,17 +64,7 @@ but through a structured, scale-dependent rate process.
 ![2D fit quality](figures/2d_fit_quality.png)
 
 - Near-perfect prediction  
-- Confirms system is **low-dimensional but not strictly 1D**
-
----
-
-## True Universality (Constrained)
-
-![True universality collapse](figures/true_universality_test.png)
-
-- Power-law rescaling produces strong alignment  
-- Additive corrections fail  
-- Universality exists, but only in a **restricted functional form**
+- System is low-dimensional, but not strictly 1D  
 
 ---
 
@@ -84,11 +72,10 @@ but through a structured, scale-dependent rate process.
 
 ![Emergent rate](figures/emergent_rate.png)
 
-dS/dx = −Γ_eff(x) · S
+dS/dx = −Γ_eff(x) · S  
 
-- Γ_eff(x) is not constant  
-- Strong variation at small x  
-- Defines underlying dynamics  
+- Γ_eff(x) varies strongly across scale  
+- Encodes the true dynamics  
 
 ---
 
@@ -98,188 +85,137 @@ dS/dx = −Γ_eff(x) · S
 
 S(x) ≈ exp(−a x^b)
 
-**Best-fit exponent:** b ≈ 0.99 (baseline case)
-
-### Observations
-
-- Pure exponential (b = 1) fails  
-- Stretched exponential captures the full decay  
-- The exponent b varies systematically across protocols  
-
-### Connection to Structure
-
-- The near-unity value b ≈ 0.99 corresponds to **low heterogeneity / structured rate dynamics**
-- Deviations in b across protocols are explained by:
-
-  b = f(CV, structure of Γ_eff(x))
+- Pure exponential fails  
+- Stretched exponential captures full behavior  
+- Exponent b varies across protocols  
 
 ---
 
-## From Rate Distributions to Universality
-
-![Rate distribution emergence](figures/rate_distribution_mechanism.png)
-
-- Arises from mixtures of decay rates  
-- Reflects heterogeneous effective dynamics  
-
----
-
-## Dynamical Universality Class
-
-![Structured universality surface](figures/dynamical_universality_surface.png)
-
-b = f(CV, structure of Γ_eff(x))
-
-### Key Findings
-
-- CV-only models fail systematically  
-- Structured rate features resolve mismatch  
-- Universality depends on dynamics, not just disorder  
-
----
-
-## Functional Universality of Decay Dynamics
+## Functional Universality
 
 ![Functional universality](figures/functional_universality_map.png)
 
-The stretching exponent b is not determined by a single scalar (e.g., CV).
-
-Instead:
-
 b = Functional[Γ_eff(x)]
 
-### Key observations
-
-- Different shapes of Γ_eff(x) produce different b  
-- Even with similar rate heterogeneity (CV), b varies  
-- Structural features (slope, curvature, range) jointly determine behavior  
+- Scalar summaries (CV) are insufficient  
+- Full structure determines behavior  
 
 ---
 
-## Learned Universality (Predictive Mapping)
+## Learned Universality Mapping
 
 ![Learned universality](figures/learned_universality_map.png)
 
-Having established that b depends on the full structure of Γ_eff(x),  
-we now learn this dependence explicitly.
+b ≈ LearnedModel[Γ_eff(x)]
 
-The mapping is constructed using a low-dimensional representation (PCA) of Γ_eff(x).
-
-### Interpretation
-
-- Each point corresponds to a full effective-rate process Γ_eff(x)  
-- Axes represent dominant modes:
-  - PC1: global slope / trend  
-  - PC2: curvature / modulation  
-- Color encodes predicted stretching exponent b  
-
-### Key observations
-
-- b varies smoothly across the manifold  
-- Mapping is structured and continuous  
-- Scalar summaries (e.g. CV) are insufficient  
-
-### Conclusion
-
-> The stretching exponent is not just a fit parameter —  
-> it is a **learnable function of the effective-rate process**.
-
-b ≈ LearnedModel[Γ_eff(x)]  
-→ a predictive, low-dimensional universality mapping
+- Low-dimensional embedding (PCA)  
+- Smooth, structured mapping  
+- Predictive across protocols  
 
 ---
 
-## Analytic Approximation for Universality
+## Analytic Approximation
 
 ![Analytic b prediction](figures/analytic_b_prediction.png)
 
-We derive an interpretable approximation for the stretching exponent:
+b ≈ α + β⟨|Γ'|⟩ + γ⟨|Γ''|⟩ + δ·CV  
 
-b ≈ α + β·⟨|dΓ/dx|⟩ + γ·⟨|d²Γ/dx²|⟩ + δ·CV
-
-### Interpretation
-
-- slope → global trend  
-- curvature → structural nonlinearity  
-- CV → heterogeneity  
-
-### Result
-
-- Analytic predictions match fitted values with high accuracy  
-- Provides an interpretable bridge between dynamics and universality  
-
-### Conclusion
-
-> The stretched exponent is not only learnable —  
-> it is **approximately derivable from geometric features of Γ_eff(x)**.
+- Interpretable features  
+- Matches fitted values  
 
 ---
 
-## First-Principles Derivation of Universality
+## First-Principles Derivation
 
-![Power-law Γ](figures/power_law_rates.png)
+![Power-law Γ](figures/power_law_rates.png)  
 ![Exact stretched law](figures/exact_stretched_from_gamma.png)
 
 Starting from:
 
-S(x) = exp(-∫ Γ(u) du)
+S(x) = exp(−∫ Γ(u) du)
 
-we derive:
+If:
 
-If Γ(x) = c x^(m-1), then
+Γ(x) = c x^(m−1)
 
-S(x) = exp(-(c/m) x^m)
+Then:
 
-→ exact stretched exponential with exponent b = m.
+S(x) = exp(−(c/m) x^m)
 
-### Structured Corrections
-
-For:
-
-Γ(x) = c x^(m-1) [1 + ε h(x)]
-
-- stretched form is preserved  
-- exponent shifts slightly  
-
-### Conclusion
-
-> Stretched-exponential universality arises directly from  
-> structured, scale-dependent rate processes.
-
-This provides a first-principles explanation of the empirical laws observed earlier.
+→ exact stretched exponential (b = m)
 
 ---
 
-## Phase Boundary: Model vs Reality
+## Local Exponent Field
 
-![Boundary comparison](figures/universality_boundary.png)
+![Local exponent field](figures/local_exponent_fields.png)
 
-- Curvature reveals higher-order structure  
+b_local(x) = x Γ(x) / ∫ Γ  
+
+- Constant for power-law Γ  
+- Scale-dependent for structured Γ  
+
+> The exponent is not a number — it is a **field over scale**
+
+---
+
+## Global Exponent as Projection
+
+![Projection comparison](figures/projection_comparison.png)
+
+b ≈ ∫ w(x) b_local(x) dx  
+
+- Different weights → different b  
+- Global exponent depends on scale emphasis  
+
+---
+
+### Best-fit projection
+
+![Best projection](figures/best_projection.png)
+
+w(x) ≈ x^1.1 (1−x)^2.3  
+
+- Emphasizes intermediate scales  
+- Reproduces fitted b with high accuracy  
+
+---
+
+## Interpretation
+
+> The stretched exponent is not a fit parameter.  
+> It is a **compressed summary of a scale-dependent exponent field**.
+
+Full hierarchy:
+
+Γ(x)  
+→ b_local(x)  
+→ weighted projection  
+→ global exponent b  
 
 ---
 
 ## Physical Model
 
-H = (Ω/2) σ_x − Δ |r⟩⟨r|
+H = (Ω/2) σ_x − Δ |r⟩⟨r|  
 
-H = Σ_i [(Ω/2) σ_x^(i) − Δ n_i] + V n₁ n₂
+H = Σ_i [(Ω/2) σ_x^(i) − Δ n_i] + V n₁ n₂  
 
-dρ/dt = −i[H, ρ] + Σ_k (L_k ρ L_k† − 1/2 {L_k† L_k, ρ})
+dρ/dt = −i[H, ρ] + Σ_k (L_k ρ L_k† − ½ {L_k† L_k, ρ})
 
 Noise:
-- γ (decay)
-- γ_φ (dephasing)
+- γ (decay)  
+- γ_φ (dephasing)  
 
 ---
 
 ## Workflows
 
-- Parameter sweeps  
 - Lindblad simulation  
+- Parameter sweeps  
 - CZ gate construction  
-- Fidelity / coherence / leakage  
 - Scaling-law extraction  
-- Universality fitting  
+- Universality modeling  
 
 ---
 
@@ -307,21 +243,20 @@ conda activate rydberg-parameter-lab
 
 ## Dependencies
 
-- Python 3.10+
-- NumPy
-- SciPy
-- Matplotlib
-- QuTiP
+- Python 3.10+  
+- NumPy  
+- SciPy  
+- Matplotlib  
+- QuTiP  
 
 ---
 
 ## Research Direction
 
 - Structure in noisy quantum systems  
-- Dimensionality reduction  
-- Limits of effective models  
-- Universal scaling laws  
-- Dynamical universality classes  
+- Dynamical universality  
+- Effective-rate geometry  
+- Scaling laws beyond exponentials  
 
 ---
 
