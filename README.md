@@ -101,6 +101,8 @@ S(x) ≈ exp(−a x^b)
 
 ![Phase diagram](figures/phase_diagram_b.png)
 
+This phase diagram shows that universality classes emerge directly from physical control parameters.
+
 Sweeping Lindblad-inspired physical parameters:
 
 - dephasing amplitude  
@@ -128,6 +130,8 @@ This connects the full pipeline:
 ## Universality Phase Diagram (Physical Control Ratios)
 
 ![Ratio phase diagram](figures/ratio_phase_diagram.png)
+
+This phase diagram shows that universality classes emerge directly from experimentally tunable parameters.
 
 Rewriting the universality map in terms of physical control ratios:
 
