@@ -6,9 +6,27 @@
 
 ---
 
+## 📊 Residual Structure (Key Result)
+
+![Residual structure](figures/residual_structure.png)
+
+Residual structure beyond RB decay: observed fidelity is well-fit
+by an exponential RB model (left), but residuals (right) show clear structure,
+indicating coherent or non-Markovian noise not captured by a single decay parameter.
+
+---
+
+## 📄 Summary PDF
+
+👉 **[Download 1-page summary](docs/rydberg_qcvv_residual_structure.pdf)**
+
+A concise explanation of residual structure beyond RB decay and its connection to effective noise modeling.
+
+---
+
 ## 🔥 Featured: QCVV + Residual Analysis
 
-This repository now includes a focused **QCVV bridge and residual analysis pipeline**:
+This repository includes a focused **QCVV bridge and residual analysis pipeline**:
 
 - **Notebook 64 — QCVV Bridge**
   - Simulates fidelity decay under open-system noise
@@ -20,8 +38,18 @@ This repository now includes a focused **QCVV bridge and residual analysis pipel
   - Uses smoothing and FFT to reveal coherent structure
   - Connects deviations to effective noise coordinate γ_eff
 
-👉 These notebooks demonstrate how:
+👉 These notebooks demonstrate:
 > **RB captures average error, but residual structure reveals underlying physics**
+
+---
+
+## 🚀 QuickStart
+
+### QCVV + Residual Analysis (start here)
+
+[![Notebook 64](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thinkthoughts/rydberg-parameter-lab/blob/main/notebooks/64_qcvv_bridge.ipynb)
+
+[![Notebook 65](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thinkthoughts/rydberg-parameter-lab/blob/main/notebooks/65_qcvv_residual_analysis.ipynb)
 
 ---
 
@@ -55,35 +83,7 @@ This repository explores how **noise and control parameters shape fidelity in ne
 
 ---
 
-## 📊 QCVV Residual Structure
-
-![Residual structure](figures/residual_structure.png)
-
-Residual structure beyond RB decay: observed fidelity is well-fit by an exponential RB model (left), but residuals (right) show clear structure, indicating coherent or non-Markovian noise not captured by a single decay parameter.
-
----
-
-## 📄 Summary PDF
-
-[Download 1-page summary](docs/rydberg_qcvv_residual_structure.pdf)
-
-A concise explanation of residual structure beyond RB decay and its connection to effective noise modeling.
-
----
-
-## 🚀 QuickStart
-
-Explore the full pipeline interactively:
-
-### QCVV + Residual Analysis (start here)
-
-[![Notebook 64](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thinkthoughts/rydberg-parameter-lab/blob/main/notebooks/64_qcvv_bridge.ipynb)
-
-[![Notebook 65](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thinkthoughts/rydberg-parameter-lab/blob/main/notebooks/65_qcvv_residual_analysis.ipynb)
-
----
-
-### Full modeling pipeline
+## Full Modeling Pipeline
 
 [![Notebook 58](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thinkthoughts/rydberg-parameter-lab/blob/main/notebooks/58_lindblad_to_gamma_pipeline.ipynb)
 
@@ -121,23 +121,6 @@ Dynamics are governed by a **structured, scale-dependent rate process Γ(x)**.
 
 ---
 
-## Stretched-Exponential Universal Law
-
-![Final universal law](figures/stretched_exponential_fit.png)
-
-S(x) ≈ exp(−a x^b)
-
----
-
-## Universality Phase Diagrams
-
-![Phase diagram](figures/phase_diagram_b.png)
-![Ratio phase diagram](figures/ratio_phase_diagram.png)
-
-b = f(physical parameters)
-
----
-
 ## Blockade Boundary and Universality Transition
 
 ![Blockade transition](figures/blockade_transition_b.png)
@@ -156,13 +139,7 @@ However, in this system:
 - deviations are systematic  
 - noise contains coherent and scale-dependent components  
 
-This leads to the central result:
-
 > **Residual structure is signal, not noise.**
-
-Effective coordinates such as  
-γ_eff = γ + λ γ_φ  
-provide a way to organize this structure and connect it to physical mechanisms.
 
 ---
 
