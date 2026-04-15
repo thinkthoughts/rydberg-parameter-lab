@@ -41,6 +41,8 @@ Core shift:
 > Dynamics are governed by a **structured, scale-dependent rate process Γ(x)**,  
 > not a constant decay rate.
 
+![Theory summary](figures/theory_figure.png)
+
 ---
 
 ## Emergent Effective Noise Coordinate
