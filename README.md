@@ -215,6 +215,41 @@ b ≈ α + β·⟨|dΓ/dx|⟩ + γ·⟨|d²Γ/dx²|⟩ + δ·CV
 
 ---
 
+## First-Principles Derivation of Universality
+
+![Power-law Γ](figures/power_law_rates.png)
+![Exact stretched law](figures/exact_stretched_from_gamma.png)
+
+Starting from:
+
+S(x) = exp(-∫ Γ(u) du)
+
+we derive:
+
+If Γ(x) = c x^(m-1), then
+
+S(x) = exp(-(c/m) x^m)
+
+→ exact stretched exponential with exponent b = m.
+
+### Structured Corrections
+
+For:
+
+Γ(x) = c x^(m-1) [1 + ε h(x)]
+
+- stretched form is preserved  
+- exponent shifts slightly  
+
+### Conclusion
+
+> Stretched-exponential universality arises directly from  
+> structured, scale-dependent rate processes.
+
+This provides a first-principles explanation of the empirical laws observed earlier.
+
+---
+
 ## Phase Boundary: Model vs Reality
 
 ![Boundary comparison](figures/universality_boundary.png)
