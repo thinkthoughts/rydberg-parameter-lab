@@ -1,8 +1,37 @@
-# rydberg-parameter-lab
-
 ![Rydberg Parameter Lab](figures/banner.png)
 
-**From Lindblad dynamics → structured rate processes → universal scaling laws → physical phase transitions**
+# Rydberg Parameter Lab
+
+**Open-system modeling of neutral-atom CZ gates using Lindblad dynamics, with direct connections to QCVV and noise characterization.**
+
+---
+
+## Key Contributions
+
+- Modeled CZ gate dynamics under open-system noise (Lindblad master equation)
+- Introduced an effective noise coordinate (γ_eff) to capture combined decoherence effects
+- Identified scaling behavior and phase boundaries in noisy gate regimes
+- Generated parameter sweeps over Ω, Δ, V, γ → fidelity landscapes
+- Connected noise models to QCVV-style benchmarking and gate characterization
+
+---
+
+## Overview
+
+This repository explores how **noise and control parameters shape fidelity in neutral-atom quantum gates**, with a focus on:
+
+- decoherence (γ, γ_φ)
+- gate depth dependence
+- deviations from simple exponential decay
+- structure in noisy quantum dynamics
+
+---
+
+## Example Behavior
+
+![Fidelity decay and CZ interaction](figures/hero_figure.png)
+
+*Example: fidelity decay under increasing gate depth, with interaction parameters (Ω, Δ, V) governing dynamics.*
 
 ---
 
