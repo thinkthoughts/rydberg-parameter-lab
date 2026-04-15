@@ -161,6 +161,29 @@ Thus:
 
 ---
 
+## ## Universality Phase Diagram (Full Physical Parameters)
+
+![Omega vs V](figures/omega_vs_V.png)
+![gamma vs gamma_phi](figures/gamma_vs_gamma_phi.png)
+
+Mapping full physical parameters:
+
+(Ω, Δ, V, γ, γ_φ) → b
+
+reveals:
+
+- **Drive vs interaction competition (Ω vs V):**
+  - Increasing V lowers b → stronger structured decay
+  - Increasing Ω stabilizes b → closer to exponential
+
+- **Decay vs dephasing competition (γ vs γφ):**
+  - Increasing γφ raises b → smoother decay
+  - Increasing γ lowers b → more structured dynamics
+
+> Universality is not abstract — it is directly controlled by **physical parameters of the Lindblad system**.
+
+---
+
 ## Functional Universality
 
 ![Functional universality](figures/functional_universality_map.png)
