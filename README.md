@@ -63,6 +63,14 @@ Residual structure beyond RB decay: observed fidelity is well-fit by an exponent
 
 ---
 
+## 📄 Summary PDF
+
+[Download 1-page summary](docs/rydberg_qcvv_residual_structure.pdf)
+
+A concise explanation of residual structure beyond RB decay and its connection to effective noise modeling.
+
+---
+
 ## 🚀 QuickStart
 
 Explore the full pipeline interactively:
