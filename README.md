@@ -26,6 +26,10 @@
   
   b ≈ ∫ w(x) b_local(x) dx  
 
+- **Derived projection weight from fit sensitivity**
+  
+  w(x) ∝ |∂ log S(x) / ∂ b|
+
 ---
 
 ## Overview
@@ -74,7 +78,7 @@ Core shift:
 
 dS/dx = −Γ_eff(x) · S  
 
-- Γ_eff(x) varies strongly across scale  
+- Γ_eff(x) varies across scale  
 - Encodes the true dynamics  
 
 ---
@@ -86,7 +90,7 @@ dS/dx = −Γ_eff(x) · S
 S(x) ≈ exp(−a x^b)
 
 - Pure exponential fails  
-- Stretched exponential captures full behavior  
+- Stretched exponential captures behavior  
 - Exponent b varies across protocols  
 
 ---
@@ -98,7 +102,7 @@ S(x) ≈ exp(−a x^b)
 b = Functional[Γ_eff(x)]
 
 - Scalar summaries (CV) are insufficient  
-- Full structure determines behavior  
+- Shape and structure determine behavior  
 
 ---
 
@@ -109,7 +113,7 @@ b = Functional[Γ_eff(x)]
 b ≈ LearnedModel[Γ_eff(x)]
 
 - Low-dimensional embedding (PCA)  
-- Smooth, structured mapping  
+- Smooth mapping  
 - Predictive across protocols  
 
 ---
@@ -120,7 +124,7 @@ b ≈ LearnedModel[Γ_eff(x)]
 
 b ≈ α + β⟨|Γ'|⟩ + γ⟨|Γ''|⟩ + δ·CV  
 
-- Interpretable features  
+- Interpretable  
 - Matches fitted values  
 
 ---
@@ -181,6 +185,31 @@ w(x) ≈ x^1.1 (1−x)^2.3
 
 ---
 
+## Sensitivity-Derived Projection Weight
+
+![Sensitivity weight](figures/sensitivity_weight_derivation.png)
+
+We derive the projection weight directly from the fitting process:
+
+w(x) ∝ |∂ log S(x) / ∂ b|
+
+So:
+
+b ≈ ∫ w(x) b_local(x) dx  
+
+---
+
+### Interpretation
+
+- The projection weight is **not arbitrary**
+- It is determined by **fit sensitivity**
+- The global exponent reflects where the system is **most informative**
+
+> The stretched exponent is a projection of a local exponent field,  
+> with the projection measure determined by the sensitivity of the observable.
+
+---
+
 ## Interpretation
 
 > The stretched exponent is not a fit parameter.  
@@ -190,7 +219,7 @@ Full hierarchy:
 
 Γ(x)  
 → b_local(x)  
-→ weighted projection  
+→ sensitivity-weighted projection  
 → global exponent b  
 
 ---
