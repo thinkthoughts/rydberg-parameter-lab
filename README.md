@@ -184,6 +184,34 @@ reveals:
 
 ---
 
+## Labeled Universality Regimes
+
+![Universality map](figures/omega_vs_V.png)
+![Labeled regimes](figures/labeled_regimes.png)
+
+The continuous universality map can be partitioned into physically meaningful regimes:
+
+- **Drive-dominated (Ω ≫ V, γ, γφ):**
+  - near-exponential decay (b ≈ 1)
+  - weak many-body structure
+
+- **Interaction-dominated (V ≫ Ω):**
+  - strong deformation of Γ(x)
+  - corresponds to **Rydberg blockade regime**
+
+- **Dephasing-influenced (γφ large):**
+  - smoothing of Γ(x)
+  - dynamics approach classical rate behavior
+
+- **Crossover region:**
+  - competing effects
+  - strongest variation in b
+
+> The stretched exponent b acts as a **coordinate on this phase diagram**,  
+> linking open-system dynamics to physical control parameters.
+
+---
+
 ## Functional Universality
 
 ![Functional universality](figures/functional_universality_map.png)
