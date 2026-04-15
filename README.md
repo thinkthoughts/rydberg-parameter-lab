@@ -176,6 +176,42 @@ b ≈ ∫ w(x) b_local(x) dx
 
 ---
 
+## Sensitivity-Derived Projection Weight
+
+![Closed-form weight](figures/closed_form_weight.png)
+
+For the stretched-exponential model:
+
+S(x) = exp(−a x^b)
+
+the fit sensitivity gives:
+
+∂ log S / ∂ b = −a x^b log x  
+
+→ projection weight:
+
+w(x) ∝ x^b |log x|
+
+- explains the empirical weight shapes observed in earlier sections  
+- selects an intermediate scale region where the fit is most informative  
+- determines which parts of Γ(x) control the global exponent  
+
+---
+
+### Interpretation
+
+The projection weight is **not arbitrary**.
+
+It is determined by **fit sensitivity**, meaning:
+
+- small x contributes weakly (x^b suppression)  
+- large x contributes weakly (log x → 0 near x = 1)  
+- intermediate x dominates  
+
+→ the stretched exponent emerges from a **specific scale window**, not the full domain
+
+---
+
 ### Best-fit projection
 
 ![Best projection](figures/best_projection.png)
