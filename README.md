@@ -26,7 +26,7 @@
   
   b ≈ ∫ w(x) b_local(x) dx  
 
-- **Derived projection weight from fit sensitivity**
+- **Projection weight derived from fit sensitivity**
   
   w(x) ∝ |∂ log S(x) / ∂ b|
 
@@ -101,29 +101,14 @@ S(x) ≈ exp(−a x^b)
 
 ![Phase diagram](figures/phase_diagram_b.png)
 
-This phase diagram shows that universality classes emerge directly from physical control parameters.
-
-Sweeping Lindblad-inspired physical parameters:
-
-- dephasing amplitude  
-- interaction strength  
-
-reveals a smooth universality map:
+Sweeping physical parameters reveals:
 
 b = f(dephasing, interaction)
 
-Key observations:
+- increasing interaction → lowers b  
+- increasing dephasing → raises b  
 
-- increasing interaction strength lowers b (sub-exponential behavior)
-- increasing dephasing raises b (super-exponential behavior)
-- the stretched exponent becomes a **physical observable**, not just a fit
-
-This connects the full pipeline:
-
-(Ω, Δ, V, γ, γ_φ)  
-→ Γ_eff(x)  
-→ b_local(x)  
-→ global exponent b  
+→ the stretched exponent becomes a **physical observable**
 
 ---
 
@@ -131,84 +116,45 @@ This connects the full pipeline:
 
 ![Ratio phase diagram](figures/ratio_phase_diagram.png)
 
-This phase diagram shows that universality classes emerge directly from experimentally tunable parameters.
-
-Rewriting the universality map in terms of physical control ratios:
-
-- γ / Ω (dissipation vs drive)
-- V / Ω (interaction vs drive)
-
-reveals a direct mapping:
+Rewriting in experimental ratios:
 
 b = f(γ/Ω, V/Ω)
 
-Key observations:
-
-- increasing γ/Ω increases b (stronger dephasing → faster effective decay)
-- increasing V/Ω decreases b (stronger interactions → slower effective decay)
-- the stretched exponent b becomes a **physical observable tied to control parameters**
-
-This aligns with known Rydberg physics:
-
-- interaction-induced dephasing grows with atom density and interactions :contentReference[oaicite:0]{index=0}  
-- dissipation and dephasing modify coherence and decay dynamics in open quantum systems :contentReference[oaicite:1]{index=1}  
-
-Thus:
-
-(Ω, Δ, V, γ, γ_φ)  
-→ Γ_eff(x)  
-→ universality class (b)
+- γ/Ω ↑ → b ↑ (smoother decay)  
+- V/Ω ↑ → b ↓ (structured decay)  
 
 ---
 
-## ## Universality Phase Diagram (Full Physical Parameters)
+## Universality Phase Diagram (Full Physical Parameters)
 
 ![Omega vs V](figures/omega_vs_V.png)
 ![gamma vs gamma_phi](figures/gamma_vs_gamma_phi.png)
 
-Mapping full physical parameters:
+Mapping:
 
 (Ω, Δ, V, γ, γ_φ) → b
 
 reveals:
 
-- **Drive vs interaction competition (Ω vs V):**
-  - Increasing V lowers b → stronger structured decay
-  - Increasing Ω stabilizes b → closer to exponential
+- drive vs interaction competition  
+- decay vs dephasing competition  
 
-- **Decay vs dephasing competition (γ vs γφ):**
-  - Increasing γφ raises b → smoother decay
-  - Increasing γ lowers b → more structured dynamics
-
-> Universality is not abstract — it is directly controlled by **physical parameters of the Lindblad system**.
+> Universality is directly controlled by physical parameters.
 
 ---
 
 ## Labeled Universality Regimes
 
-![Universality map](figures/omega_vs_V.png)
 ![Labeled regimes](figures/labeled_regimes.png)
 
-The continuous universality map can be partitioned into physically meaningful regimes:
+The universality map partitions into:
 
-- **Drive-dominated (Ω ≫ V, γ, γφ):**
-  - near-exponential decay (b ≈ 1)
-  - weak many-body structure
+- **Drive-dominated**
+- **Interaction-dominated (Rydberg blockade)**
+- **Dephasing-influenced**
+- **Crossover**
 
-- **Interaction-dominated (V ≫ Ω):**
-  - strong deformation of Γ(x)
-  - corresponds to **Rydberg blockade regime**
-
-- **Dephasing-influenced (γφ large):**
-  - smoothing of Γ(x)
-  - dynamics approach classical rate behavior
-
-- **Crossover region:**
-  - competing effects
-  - strongest variation in b
-
-> The stretched exponent b acts as a **coordinate on this phase diagram**,  
-> linking open-system dynamics to physical control parameters.
+> The exponent b becomes a **coordinate on a physical phase diagram**
 
 ---
 
@@ -218,8 +164,8 @@ The continuous universality map can be partitioned into physically meaningful re
 
 b = Functional[Γ_eff(x)]
 
-- Scalar summaries (CV) are insufficient  
-- Shape and structure determine behavior  
+- Scalar summaries fail  
+- Structure determines behavior  
 
 ---
 
@@ -229,9 +175,8 @@ b = Functional[Γ_eff(x)]
 
 b ≈ LearnedModel[Γ_eff(x)]
 
-- Low-dimensional embedding (PCA)  
-- Smooth mapping  
-- Predictive across protocols  
+- Low-dimensional embedding  
+- Smooth predictive mapping  
 
 ---
 
@@ -242,7 +187,7 @@ b ≈ LearnedModel[Γ_eff(x)]
 b ≈ α + β⟨|Γ'|⟩ + γ⟨|Γ''|⟩ + δ·CV  
 
 - Interpretable  
-- Matches fitted values  
+- Matches data  
 
 ---
 
@@ -250,10 +195,6 @@ b ≈ α + β⟨|Γ'|⟩ + γ⟨|Γ''|⟩ + δ·CV
 
 ![Power-law Γ](figures/power_law_rates.png)  
 ![Exact stretched law](figures/exact_stretched_from_gamma.png)
-
-Starting from:
-
-S(x) = exp(−∫ Γ(u) du)
 
 If:
 
@@ -273,10 +214,10 @@ S(x) = exp(−(c/m) x^m)
 
 b_local(x) = x Γ(x) / ∫ Γ  
 
-- Constant for power-law Γ  
-- Scale-dependent for structured Γ  
+- constant for power-law Γ  
+- variable for structured Γ  
 
-> The exponent is not a number — it is a **field over scale**
+> The exponent is a **field over scale**
 
 ---
 
@@ -286,44 +227,36 @@ b_local(x) = x Γ(x) / ∫ Γ
 
 b ≈ ∫ w(x) b_local(x) dx  
 
-- Different weights → different b  
-- Global exponent depends on scale emphasis  
+- depends on scale weighting  
+- not a single-scale property  
 
 ---
 
 ## Sensitivity-Derived Projection Weight
 
-![Closed-form weight](figures/closed_form_weight.png)
+![Sensitivity weight](figures/sensitivity_weight_derivation.png)
 
-For the stretched-exponential model:
+From:
 
 S(x) = exp(−a x^b)
 
-the fit sensitivity gives:
+we obtain:
 
 ∂ log S / ∂ b = −a x^b log x  
 
-→ projection weight:
+→
 
 w(x) ∝ x^b |log x|
-
-- explains the empirical weight shapes observed in earlier sections  
-- selects an intermediate scale region where the fit is most informative  
-- determines which parts of Γ(x) control the global exponent  
 
 ---
 
 ### Interpretation
 
-The projection weight is **not arbitrary**.
+- small x suppressed  
+- large x suppressed  
+- **intermediate x dominates**
 
-It is determined by **fit sensitivity**, meaning:
-
-- small x contributes weakly (x^b suppression)  
-- large x contributes weakly (log x → 0 near x = 1)  
-- intermediate x dominates  
-
-→ the stretched exponent emerges from a **specific scale window**, not the full domain
+→ exponent emerges from a **specific scale window**
 
 ---
 
@@ -333,33 +266,8 @@ It is determined by **fit sensitivity**, meaning:
 
 w(x) ≈ x^1.1 (1−x)^2.3  
 
-- Emphasizes intermediate scales  
-- Reproduces fitted b with high accuracy  
-
----
-
-## Sensitivity-Derived Projection Weight
-
-![Sensitivity weight](figures/sensitivity_weight_derivation.png)
-
-We derive the projection weight directly from the fitting process:
-
-w(x) ∝ |∂ log S(x) / ∂ b|
-
-So:
-
-b ≈ ∫ w(x) b_local(x) dx  
-
----
-
-### Interpretation
-
-- The projection weight is **not arbitrary**
-- It is determined by **fit sensitivity**
-- The global exponent reflects where the system is **most informative**
-
-> The stretched exponent is a projection of a local exponent field,  
-> with the projection measure determined by the sensitivity of the observable.
+- matches empirical fits  
+- selects dominant scale region  
 
 ---
 
@@ -368,12 +276,12 @@ b ≈ ∫ w(x) b_local(x) dx
 > The stretched exponent is not a fit parameter.  
 > It is a **compressed summary of a scale-dependent exponent field**.
 
-Full hierarchy:
+Hierarchy:
 
 Γ(x)  
 → b_local(x)  
 → sensitivity-weighted projection  
-→ global exponent b  
+→ b  
 
 ---
 
@@ -386,8 +294,8 @@ H = Σ_i [(Ω/2) σ_x^(i) − Δ n_i] + V n₁ n₂
 dρ/dt = −i[H, ρ] + Σ_k (L_k ρ L_k† − ½ {L_k† L_k, ρ})
 
 Noise:
-- γ (decay)  
-- γ_φ (dephasing)  
+- γ  
+- γ_φ  
 
 ---
 
