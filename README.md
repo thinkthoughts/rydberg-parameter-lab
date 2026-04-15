@@ -59,7 +59,7 @@ This repository explores how **noise and control parameters shape fidelity in ne
 
 ![Residual structure](figures/residual_structure.png)
 
-*RB residuals show clear structure, indicating noise beyond simple exponential decay.*
+Residual structure beyond RB decay: observed fidelity is well-fit by an exponential RB model (left), but residuals (right) show clear structure, indicating coherent or non-Markovian noise not captured by a single decay parameter.
 
 ---
 
